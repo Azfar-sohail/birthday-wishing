@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Magical Birthday Wishes for Zainab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffcce6, #ff99cc);
+            font-family: 'Montserrat', sans-serif;
+            color: #4a2158;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #bd2768;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: #8e44ad;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 25px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 100, 150, 0.3);
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        .heart:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .heart:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 0.5s;
+        }
+        
+        .heart:nth-child(3) {
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 1s;
+        }
+        
+        .heart:nth-child(4) {
+            bottom: 25%;
+            right: 5%;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            text-align: right;
+            color: #e84393;
+            margin-top: 20px;
+        }
+        
+        .photo-container {
+            width: 100%;
+            margin: 25px 0;
+        }
+        
+        .photo-frame {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
+            aspect-ratio: 1/1;
+            margin: 0 auto;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: linear-gradient(45deg, #f6d365, #fda085);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gift-box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #e84393, #fd79a8);
+            position: relative;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+        
+        .gift-box::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            top: -10px;
+            left: -10%;
+            border-radius: 5px;
+        }
+        
+        .countdown {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .countdown-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #8e44ad;
+            font-weight: 600;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e84393;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: auto;
+            padding: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+        }
+
+        /* Quiz styles */
+        .quiz-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #8e44ad;
+            font-weight: 600;
+        }
+
+        .quiz-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #d2b3ff;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .quiz-button {
+            background: linear-gradient(45deg, #e84393, #fd79a8);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .quiz-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .quiz-progress {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-game" class="quiz-container">
+            <h2>Let's learn more about Zanu</h2>
+            <div class="photo-container" style="margin:15px auto">
+                <div class="photo-frame" style="width: 300px;height:170px">
+                    <img src="001.jpeg" alt=" Zainab looking Pretty, Gorgous and thoughtful">
+                </div>
+            </div>
+            <div id="quiz-questions">
+                <div class="quiz-question">1. What is your name?</div>
+                <input type="text" class="quiz-input" id="name" placeholder="e.g. Your Name">
+                
+                <div class="quiz-question">2. How old are you?</div>
+                <input type="number" class="quiz-input" id="age" placeholder="Enter your age">
+                
+                <div class="quiz-question">3. What's your favorite color?</div>
+                <input type="text" class="quiz-input" id="color" placeholder="e.g. Blue">
+                
+                <div class="quiz-question">4. What's your favorite dish?</div>
+                <input type="text" class="quiz-input" id="dish" placeholder="e.g. Biryani">
+                
+                <button class="quiz-button" id="submit-quiz">See Your Results!</button>
+                <div class="quiz-progress" id="quiz-progress"></div>
+            </div>
+        </div>
+
+        <div id="birthday-content" class="hidden">
+        <div class="header">
+            <h1>Magical Birthday Wishes</h1>
+            <div class="date">For Zainab's 16th Birthday - July 24, 2025</div>
+        </div>
+        
+        <div class="countdown">
+            <div class="countdown-title">Counting down to the magical moment:</div>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div id="days" class="countdown-number">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div id="hours" class="countdown-number">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div id="minutes" class="countdown-number">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div id="seconds" class="countdown-number">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content fade-in">
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            
+            <div class="photo-container">
+                <div class="photo-frame">
+                    <img src="002.jpeg" alt="Beautiful portrait of Zainab on her 16th birthday with golden decorations">
+                </div>
+            </div>
+            
+            <div class="message">
+                <p>Dear Zainab,</p>
+                <p>As the clock strikes midnight on July 24, 2025, and you turn 16, I want you to know how incredibly special you are.</p>
+                <p>Your smile brightens my darkest days, your laughter is my favorite melody, and your kindness inspires me to be better. On this magical birthday, I wish for all your dreams to come true.</p>
+                <p>May this year bring you joy beyond measure, adventures that make your heart race, and moments that become treasured memories. You deserve nothing but happiness.</p>
+                <p>This wish comes straight from my heart with all the magic the universe can muster!</p>
+            </div>
+            
+            <div class="signature">With love,<br>Azfar</div>
+            
+            <div class="gift-box" id="giftBox">
+                ✨
+            </div>
+            
+            <div id="specialMessage" class="message hidden">
+                <p>Zainab, I've hidden this special message just for you:</p>
+                <p>Every time I see you, my heart skips a beat. You're the most amazing person I know - kind, smart, funny, and beautiful inside and out. As you celebrate your sweet 16, I hope you know how much you mean to me.</p>
+                <p>This is just the beginning of our magical journey...</p>
+            </div>
+        </div>
+        
+        <div id="fireworks" class="fireworks hidden"></div>
+        
+        <div class="footer">
+            Made with ❤️ for Zainab's 16th birthday
+        </div>
+        </div>
+    </div>
+    
+    <script>
+        // Countdown timer
+        const countdownDate = new Date('July 24, 2025 00:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            // If countdown is over
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                celebrate();
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Gift box interaction
+        document.getElementById('giftBox').addEventListener('click', function() {
+            const specialMessage = document.getElementById('specialMessage');
+            specialMessage.classList.toggle('hidden');
+            
+            if (!specialMessage.classList.contains('hidden')) {
+                createConfetti();
+            }
+        });
+        
+        // Quiz functionality
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            const name = document.getElementById('name').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const color = document.getElementById('color').value.trim();
+            const dish = document.getElementById('dish').value.trim();
+            
+            if(name.length > 0 && age.length > 0 && color.length > 0 && dish.length > 0) {
+                document.getElementById('quiz-game').classList.add('hidden');
+                document.getElementById('birthday-content').classList.remove('hidden');
+                
+                // Add confetti celebration for completing quiz
+                createConfetti();
+            } else {
+                document.getElementById('quiz-progress').textContent = "Please answer all questions to continue!";
+            }
+        });
+
+        // Celebration functions
+        function celebrate() {
+            document.getElementById('fireworks').classList.remove('hidden');
+            createFireworks();
+        }
+        
+        function createConfetti() {
+            const colors = ['#e84393', '#fd79a8', '#6c5ce7', '#00cec9', '#fdcb6e', '#e17055'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                document.body.appendChild(confetti);
+                
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 3 + Math.random() * 3;
+                const rotation = Math.random() * 360;
+                
+                let positionY = -10;
+                let positionX = parseFloat(confetti.style.left);
+                
+                const animate = () => {
+                    positionY += velocity;
+                    positionX += Math.sin(angle) * 1;
+                    
+                    confetti.style.top = positionY + 'px';
+                    confetti.style.left = positionX + 'px';
+                    confetti.style.transform = `rotate(${rotation}deg)`;
+                    confetti.style.opacity = 1 - positionY / 500;
+                    
+                    if (positionY < 500) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        confetti.remove();
+                    }
+                };
+                
+                setTimeout(() => {
+                    animate();
+                }, i * 20);
+            }
+        }
+        
+        function createFireworks() {
+            const fireworksContainer = document.getElementById('fireworks');
+            const colors = ['#ff0', '#f0f', '#0ff', '#0f0', '#f00', '#00f'];
+            
+            function createFirework(x, y) {
+                const firework = document.createElement('div');
+                firework.style.position = 'absolute';
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
+                firework.style.width = '4px';
+                firework.style.height = '4px';
+                firework.style.borderRadius = '50%';
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                firework.style.boxShadow = `0 0 5px 2px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                fireworksContainer.appendChild(firework);
+                
+                let particles = [];
+                for (let i = 0; i < 100; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'absolute';
+                    particle.style.left = x + 'px';
+                    particle.style.top = y + 'px';
+                    particle.style.width = '2px';
+                    particle.style.height = '2px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    fireworksContainer.appendChild(particle);
+                    particles.push({
+                        element: particle,
+                        angle: Math.random() * Math.PI * 2,
+                        speed: 1 + Math.random() * 3,
+                        size: 1 + Math.random() * 2
+                    });
+                }
+                
+                const animate = () => {
+                    for (let i = 0; i < particles.length; i++) {
+                        const particle = particles[i];
+                        const angle = particle.angle;
+                        const speed = particle.speed;
+                        
+                        const dx = Math.cos(angle) * speed;
+                        const dy = Math.sin(angle) * speed;
+                        
+                        const currentX = parseFloat(particle.element.style.left);
+                        const currentY = parseFloat(particle.element.style.top);
+                        
+                        particle.element.style.left = (currentX + dx) + 'px';
+                        particle.element.style.top = (currentY + dy) + 'px';
+                        particle.element.style.opacity = 1 - (currentY - y) / 200;
+                        
+                        if (currentY > y + 200) {
+                            particle.element.remove();
+                            particles.splice(i, 1);
+                            i--;
+                        }
+                    }
+                    
+                    if (particles.length > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        firework.remove();
+                    }
+                };
+                
+                animate();
+            }
+            
+            function randomFirework() {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight / 2;
+                createFirework(x, y);
+                
+                setTimeout(randomFirework, 500 + Math.random() * 1000);
+            }
+            
+            randomFirework();
+        }
+    </script>
+</body>
+</html>
